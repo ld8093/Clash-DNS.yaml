@@ -1,7 +1,7 @@
 # NAME: 自用clash防DNS配置
 # AUTHOR: ld8093
-# REPO: 
-# UPDATED: 2026-04-21 21:12:08
+# REPO: https://github.com/ld8093/Clash-Verrge-Rev-DNS-.yaml
+# UPDATED: 2026-04-21 21:23:15
 # 不喜勿喷，请勿使用并退出此配置。
 
 dns:
@@ -169,14 +169,14 @@ rule-providers:
     url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt"
     path: "./ruleset/loyalsoldier/private.yaml"
   gfw:
-    type: http
+    输入: http
     format: yaml
     interval: 86400
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
     path: "./ruleset/loyalsoldier/gfw.yaml"
   tld-not-cn:
-    type: http
+    输入: http
     format: yaml
     interval: 86400
     behavior: domain
@@ -231,6 +231,14 @@ rule-providers:
     behavior: classical
     url: "https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Spotify.txt"
     path: "./ruleset/xiaolin-007/Spotify.yaml"
+  China:
+    输入: http
+    format: yaml
+    interval: 86400
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ld8093/China.list/refs/heads/main/China.list"
+    path: "./ruleset/ld8093/China.list"
+    
 
 # 代理组 (来自 tun.txt 中的 proxy-groups)
 proxy-groups:
@@ -416,7 +424,7 @@ proxy-groups:
     max-failed-times: 3
     icon: "https://github.com/blackmatrix7/ios_rule_script/blob/master/icon/qure/color/Facebook.png?raw=true"
   - name: "Netflix"
-    type: "select"
+    输入: "select"
     proxies: ["香港节点", "韩国节点", "台湾节点", "狮城节点", "日本节点", "美国节点"]
     include-all: false
     interval: 300
@@ -427,7 +435,7 @@ proxy-groups:
     hidden: false
     icon: "https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/icon/netflix.svg"
   - name: "Telegram"
-    type: "select"
+    输入: "select"
     proxies: ["香港节点", "韩国节点", "台湾节点", "狮城节点", "日本节点", "美国节点"]
     include-all: false
     interval: 300
@@ -438,7 +446,7 @@ proxy-groups:
     hidden: false
     icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/telegram.svg"
   - name: "ChatGPT"
-    type: "select"
+    输入: "select"
     proxies: ["香港节点", "韩国节点", "台湾节点", "狮城节点", "日本节点", "美国节点"]
     include-all: false
     interval: 300
@@ -449,7 +457,7 @@ proxy-groups:
     hidden: false
     icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/chatgpt.svg"
   - name: "Apple"
-    type: "select"
+    输入: "select"
     proxies: ["DIRECT", "节点选择"]
     include-all: false
     interval: 300
@@ -460,7 +468,7 @@ proxy-groups:
     hidden: false
     icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/apple.svg"
   - name: "Spotify"
-    type: "select"
+    输入: "select"
     proxies: ["香港节点", "韩国节点", "台湾节点", "狮城节点", "日本节点", "美国节点"]
     include-all: false
     interval: 300
@@ -498,15 +506,7 @@ rules:
   - "DOMAIN-KEYWORD,vk.com,香港节点"
   - "DOMAIN-KEYWORD,makeding,香港节点"
   - "DOMAIN-KEYWORD,macked,香港节点"
-  - "DOMAIN-KEYWORD,423down,DIRECT"
-  - "DOMAIN-KEYWORD,crossover,DIRECT"
-  - "DOMAIN-KEYWORD,todesk,DIRECT"
-  - "DOMAIN-KEYWORD,img.ffzy888.com,DIRECT"
-  - "DOMAIN-KEYWORD,xx.yzys.top,DIRECT"
-  - "DOMAIN-KEYWORD,img.bfzypic.com,DIRECT"
-  - "DOMAIN-KEYWORD,wogg.xxooo.cf,DIRECT"
-  - "DOMAIN-KEYWORD,wwgz.cn,DIRECT"
-  - "DOMAIN-KEYWORD,woggpan.333232.xyz,DIRECT"
+  - "RULE-SET,China,DIRECT,no-resolve"
   - "RULE-SET,applications,DIRECT"
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,DouYin,抖音"
