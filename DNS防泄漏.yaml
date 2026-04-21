@@ -1,7 +1,7 @@
 # NAME: 自用clash防DNS泄漏，不喜勿用。
 # AUTHOR: ld8093
 # REPO: https://github.com/ld8093/Clash-DNS.yaml
-# UPDATED: 2026-04-21 21:56:52
+# UPDATED: 2026-04-21 21:59:47
 
 dns:
   enable: true 
