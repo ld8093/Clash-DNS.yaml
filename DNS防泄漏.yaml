@@ -1,9 +1,7 @@
 # NAME: 自用clash防DNS泄漏，不喜勿用。
 # AUTHOR: ld8093
 # REPO: https://github.com/ld8093/Clash-DNS
-# UPDATED: 2026-04-25 17:53:18
-
-proxies: [] 
+# UPDATED: 2026-04-26 01:19:38
 
 dns:
   enable: true 
@@ -106,13 +104,6 @@ rule-providers:
     behavior: classical
     url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaMedia.list"
     path: "./ruleset/ChinaMedia.list"
-  ProxyMedia:
-    type: http
-    format: text
-    interval: 86400
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ProxyMedia.list"
-    path: "./ruleset/ProxyMedia.list"
   ChinaDomain:
     type: http
     format: text
@@ -138,100 +129,79 @@ rule-providers:
     type: http
     format: text
     interval: 86400
-    behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
-    path: "./ruleset/loyalsoldier/icloud.yaml"
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/iCloud/iCloud.list"
+    path: "./ruleset/blackmatrix7/iCloud.list"
   apple:
     type: http
     format: text
     interval: 86400
-    behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
-    path: "./ruleset/loyalsoldier/apple.yaml"
-  proxy:
-    type: http
-    format: text
-    interval: 86400
-    behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
-    path: "./ruleset/loyalsoldier/proxy.yaml"
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Apple/Apple.list"
+    path: "./ruleset/blackmatrix7/Apple.list"
   direct:
     type: http
     format: text
     interval: 86400
-    behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
-    path: "./ruleset/loyalsoldier/direct.yaml"
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Direct/Direct.list"
+    path: "./ruleset/blackmatrix7/Direct.list"
   private:
     type: http
     format: text
     interval: 86400
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt"
-    path: "./ruleset/loyalsoldier/private.yaml"
+    path: "./ruleset/loyalsoldier/private.txt"
   gfw:
     type: http
     format: text
     interval: 86400
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
-    path: "./ruleset/loyalsoldier/gfw.yaml"
+    path: "./ruleset/loyalsoldier/gfw.txt"
   tld-not-cn:
     type: http
     format: text
     interval: 86400
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt"
-    path: "./ruleset/loyalsoldier/tld-not-cn.yaml"
-  telegramcidr:
-    type: http
-    format: text
-    interval: 86400
-    behavior: ipcidr
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
-    path: "./ruleset/loyalsoldier/telegramcidr.yaml"
-  cncidr:
-    type: http
-    format: text
-    interval: 86400
-    behavior: ipcidr
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
-    path: "./ruleset/loyalsoldier/cncidr.yaml"
-  lancidr:
-    type: http
-    format: text
-    interval: 86400
-    behavior: ipcidr
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
-    path: "./ruleset/loyalsoldier/lancidr.yaml"
-  applications:
+    path: "./ruleset/loyalsoldier/tld-not-cn.txt"
+  Telegram:
     type: http
     format: text
     interval: 86400
     behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Telegram/Telegram.list"
+    path: "./ruleset/blackmatrix7/Telegram.list"
+  applications:
+    type: http
+    format: text
+    interval: 86400
+    behavior: domain
     url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
-    path: "./ruleset/loyalsoldier/applications.yaml"
+    path: "./ruleset/loyalsoldier/applications.txt"
   YouTube:
     type: http
     format: text
     interval: 86400
     behavior: classical
-    url: "https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/YouTube.txt"
-    path: "./ruleset/xiaolin-007/YouTube.yaml"
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube.list"
+    path: "./ruleset/blackmatrix7/YouTube.list"
   Netflix:
     type: http
     format: text
     interval: 86400
     behavior: classical
-    url: "https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Netflix.txt"
-    path: "./ruleset/xiaolin-007/Netflix.yaml"
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix.list"
+    path: "./ruleset/blackmatrix7/Netflix.list"
   Spotify:
     type: http
     format: text
     interval: 86400
     behavior: classical
-    url: "https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Spotify.txt"
-    path: "./ruleset/xiaolin-007/Spotify.yaml"
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Spotify/Spotify.list"
+    path: "./ruleset/blackmatrix7/Spotify.list"
   China:
     type: http
     format: text
@@ -499,7 +469,6 @@ rules:
   - "DOMAIN,wximg.wxs.qq.com,REJECT"
   - "DOMAIN,sdk.zhangyuyidong.cn,REJECT"
   - "DOMAIN,api-dsp.8ziben.com,REJECT"
-  - "RULE-SET,China,DIRECT"
   - "RULE-SET,applications,DIRECT"
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,apple,Apple"
@@ -518,16 +487,13 @@ rules:
   - "RULE-SET,Twitter,Twitter"
   - "RULE-SET,Facebook,Facebook"
   - "RULE-SET,OpenAi,美国节点"
-  - "RULE-SET,ProxyMedia,节点选择"
   - "RULE-SET,YouTube,YouTube"
   - "RULE-SET,Netflix,Netflix"
   - "RULE-SET,Spotify,Spotify"
-  - "RULE-SET,proxy,节点选择"
   - "RULE-SET,gfw,节点选择"
   - "RULE-SET,tld-not-cn,节点选择"
-  - "RULE-SET,lancidr,DIRECT,no-resolve"
-  - "RULE-SET,cncidr,DIRECT,no-resolve"
-  - "RULE-SET,telegramcidr,Telegram,no-resolve"
+  - "RULE-SET,Telegram,Telegram,no-resolve"
+  - "RULE-SET,China,DIRECT"
   - "GEOSITE,CN,DIRECT"
   - "GEOIP,LAN,DIRECT,no-resolve"
   - "GEOIP,CN,DIRECT,no-resolve"
