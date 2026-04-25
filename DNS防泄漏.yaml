@@ -118,7 +118,7 @@ rule-providers:
     behavior: domain
     url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaDomain.list"
     path: "./ruleset/ChinaDomain.list"
-  下载:
+  Download:
     type: http
     format: text
     interval: 86400
